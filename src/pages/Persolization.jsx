@@ -27,7 +27,7 @@ function ProfileSettings() {
       console.error("New password and confirm password do not match.");
       return;
     }
-    Axios.put("http://localhost:5000/profile/update", {
+    Axios.put("https://admin-dashboard-2-ck9x.onrender.com/profile/update", {
       email,
       firstName,
       lastName,
@@ -54,7 +54,7 @@ function ProfileSettings() {
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:5000/profile/findByEmail", { params: { email } })
+    Axios.get("https://admin-dashboard-2-ck9x.onrender.com/profile/findByEmail", { params: { email } })
       .then((response) => {
         const { firstName, lastName, bio, phone, gender, dob, email } = response.data.profile;
         console.log(response.data.profile);
