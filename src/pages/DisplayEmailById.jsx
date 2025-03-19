@@ -29,7 +29,7 @@ const DisplayEmailById = ({ email, onBack, action, open,close1 }) => {
   };
 
   const handleTrash=(emailId)=>{
-    Axios.post("http://localhost:5000/email/SentTrash",{id:emailId},{headers:{"Authorization":`Bearer ${localStorage.getItem("token")}`}})
+    Axios.post("https://admin-dashboard-2-ck9x.onrender.com/email/SentTrash",{id:emailId},{headers:{"Authorization":`Bearer ${localStorage.getItem("token")}`}})
         .then((response)=>{
           console.log(response.data);
         })
