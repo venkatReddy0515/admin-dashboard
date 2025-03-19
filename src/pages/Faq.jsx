@@ -17,7 +17,7 @@ function Faq() {
   const [type, setType] = useState("");
   const videoRef = useRef();
   const handleFetchMails=()=>{
-    Axios.get("http://localhost:5000/faq")
+    Axios.get("https://admin-dashboard-2-ck9x.onrender.com/faq")
     .then((response)=>{
       setFaqs(response.data.faqs)
     })
@@ -33,7 +33,7 @@ function Faq() {
 
   const handleSaveClick = (index) => {
     console.log(editedAnswer)
-    Axios.post(`http://localhost:5000/faq/${index}`,{a:editedAnswer})
+    Axios.post(`https://admin-dashboard-2-ck9x.onrender.com/faq/${index}`,{a:editedAnswer})
     .then((response)=>{
       console.log(response.data)
     })
