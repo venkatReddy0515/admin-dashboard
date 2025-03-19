@@ -32,7 +32,7 @@ const MailList = ({ title, mail: initialMails = [], move, mailData,currentPage,s
     let filtered = [];
     switch (title.toLowerCase()) {
       case "starred":
-        Axios.get(`http://localhost:5000/email/star?page=${currentPage}&limit=${limit}`, {
+        Axios.get(`https://admin-dashboard-2-ck9x.onrender.com/email/star?page=${currentPage}&limit=${limit}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
           .then((response) => {
@@ -46,7 +46,7 @@ const MailList = ({ title, mail: initialMails = [], move, mailData,currentPage,s
           });
           break;
       case "trash":
-        Axios.get(`http://localhost:5000/email/isTrashed?page=${currentPage}&limit=${limit}`, {
+        Axios.get(`https://admin-dashboard-2-ck9x.onrender.com/email/isTrashed?page=${currentPage}&limit=${limit}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
           .then((response) => {
@@ -59,7 +59,7 @@ const MailList = ({ title, mail: initialMails = [], move, mailData,currentPage,s
           });
         return; // Exit early if using Axios
       case "drafts":
-        Axios.get(`http://localhost:5000/email/isDraft?page=${currentPage}&limit=${limit}`, {
+        Axios.get(`https://admin-dashboard-2-ck9x.onrender.com/email/isDraft?page=${currentPage}&limit=${limit}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
           .then((response) => {
@@ -73,7 +73,7 @@ const MailList = ({ title, mail: initialMails = [], move, mailData,currentPage,s
           });
         return;
       case "sent":
-        Axios.get(`http://localhost:5000/email/Sent?page=${currentPage}&limit=${limit}`, {
+        Axios.get(`https://admin-dashboard-2-ck9x.onrender.com/email/Sent?page=${currentPage}&limit=${limit}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
           .then((response) => {
@@ -164,7 +164,7 @@ const MailList = ({ title, mail: initialMails = [], move, mailData,currentPage,s
     // Mark the mail as read before proceeding
     mail.receiverStatus.read = true;
     Axios.post(
-      `http://localhost:5000/email/inbox/read`,
+      `https://admin-dashboard-2-ck9x.onrender.com/email/inbox/read`,
       { id: mail._id },
       { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
     )
@@ -192,7 +192,7 @@ const MailList = ({ title, mail: initialMails = [], move, mailData,currentPage,s
       case "starred":
         updateMailProperty(emailId, "isStarred", true);
         Axios.post(
-          "http://localhost:5000/email/SendStar",
+          "https://admin-dashboard-2-ck9x.onrender.com/email/SendStar",
           { id: emailId },
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         )
@@ -205,7 +205,7 @@ const MailList = ({ title, mail: initialMails = [], move, mailData,currentPage,s
         break;
       case "trash":
         Axios.post(
-          "http://localhost:5000/email/SentTrash",
+          "https://admin-dashboard-2-ck9x.onrender.com/email/SentTrash",
           { id: emailId },
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         )
