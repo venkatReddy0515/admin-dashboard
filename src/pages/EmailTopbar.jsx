@@ -77,7 +77,7 @@ const EmailTopBar = ({
   }
 
   const fromMe=()=>{
-    Axios.get(`http://localhost:5000/email/Sent?page=${page}&limit=${10}`, {
+    Axios.get(`https://admin-dashboard-2-ck9x.onrender.com/email/Sent?page=${page}&limit=${10}`, {
               headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
             })
               .then((response) => {
