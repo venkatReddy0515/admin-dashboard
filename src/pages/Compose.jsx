@@ -94,7 +94,7 @@ Admin Team`,
         formData.append("image", selectedImage);
       }
     
-      Axios.post("http://localhost:5000/email/sent", formData, {
+      Axios.post("https://admin-dashboard-2-ck9x.onrender.com/email/sent", formData, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
@@ -123,7 +123,7 @@ Admin Team`,
       const token = localStorage.getItem("token");
       const preview = body.substring(0, 50);
       Axios.post(
-        "http://localhost:5000/email/draft",
+        "https://admin-dashboard-2-ck9x.onrender.com/email/draft",
         { emailId: mailid, subject, body, preview,image:selectedImage},
         { headers: { Authorization: `Bearer ${token}` } }
         )
