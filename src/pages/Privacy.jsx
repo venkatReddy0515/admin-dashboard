@@ -21,7 +21,7 @@ function PrivacyAndSecurity() {
 
   const toggleLocationSharing = () => {
     setLocationSharing(!locationSharing);
-    Axios.put("http://localhost:5000/2fa/update-location-sharing",{email,locationSharing})
+    Axios.put("https://admin-dashboard-2-ck9x.onrender.com/2fa/update-location-sharing",{email,locationSharing})
     .then((response)=>{
       alert(
         `Location sharing has been ${!locationSharing ? "enabled" : "disabled"}.`
@@ -38,7 +38,7 @@ function PrivacyAndSecurity() {
   const changeVisibility = (newVisibility) => {
     setVisibility(newVisibility);
     
-    Axios.put("http://localhost:5000/2fa/update-visibility",{email,visibility})
+    Axios.put("https://admin-dashboard-2-ck9x.onrender.com/2fa/update-visibility",{email,visibility})
     .then((response)=>{
       alert(`Visibility changed to ${newVisibility} profile.`);
     })
@@ -61,7 +61,7 @@ function PrivacyAndSecurity() {
 
   const verifyOtp = () => {
     const enteredOtp = otp.join("");
-      Axios.post("http://localhost:5000/2fa/verify-otp",{email,enteredOtp})
+      Axios.post("https://admin-dashboard-2-ck9x.onrender.com/2fa/verify-otp",{email,enteredOtp})
       .then((response)=>{
         setOtpVerified(true);
         setTwoFactorAuth(true);
@@ -85,7 +85,7 @@ function PrivacyAndSecurity() {
   };
   const handleOpt=()=>{
     try{
-      Axios.post("http://localhost:5000/2fa/enable",{email:email})
+      Axios.post("https://admin-dashboard-2-ck9x.onrender.com/2fa/enable",{email:email})
       .then((response)=>{
         alert("opt SuccessFully sent");
       })
