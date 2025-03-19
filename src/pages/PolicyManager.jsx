@@ -21,7 +21,7 @@ const PolicyManager = ({ title,title1 ,defaultPolicies,category }) => {
     setPolicies([...policies, newPolicy]);
     setNewPolicy("");
     
-    axios.post(`http://localhost:5000/policy/policy/add/${category}`,{message:newPolicy,type:title1})
+    axios.post(`https://admin-dashboard-2-ck9x.onrender.com/policy/policy/add/${category}`,{message:newPolicy,type:title1})
     .then((response)=>{
       console.log(response.data);
       alert("added successfully")
@@ -46,7 +46,7 @@ const PolicyManager = ({ title,title1 ,defaultPolicies,category }) => {
       const updatedPolicies = [...policies];
       updatedPolicies[editIndex] = editPolicy;
 
-      await axios.put(`http://localhost:5000/policy/policies/${category}`, {
+      await axios.put(`https://admin-dashboard-2-ck9x.onrender.com/policy/policies/${category}`, {
         type: title1,
         index: editIndex,
         newPolicy: editPolicy,
@@ -69,7 +69,7 @@ const PolicyManager = ({ title,title1 ,defaultPolicies,category }) => {
       alert("Policy deleted successfully.");
     }
     try {
-      await axios.delete(`http://localhost:5000/policy/policies/${category}`, {
+      await axios.delete(`https://admin-dashboard-2-ck9x.onrender.com/policy/policies/${category}`, {
         data: { type: "privacyPolicies", index },
       });
 
