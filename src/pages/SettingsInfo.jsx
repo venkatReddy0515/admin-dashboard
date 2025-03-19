@@ -17,7 +17,7 @@ function SettingsPage() {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/settings");
+        const response = await axios.get("https://admin-dashboard-2-ck9x.onrender.com/settings");
         const data = response.data.settings;
 
         // Update state with fetched settings
@@ -83,7 +83,7 @@ function SettingsPage() {
       formData.append("dateFormat", dateFormat);
       formData.append("timeFormat", timeFormat);
       console.log(formData);
-      axios.post("http://localhost:5000/settings/settings", formData)
+      axios.post("https://admin-dashboard-2-ck9x.onrender.com/settings/settings", formData)
       .then((response)=>{
         console.log(response.data);
       })
