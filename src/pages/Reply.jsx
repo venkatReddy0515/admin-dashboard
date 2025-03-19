@@ -23,7 +23,7 @@ function Reply({ email, mail, Replay,close1,replayType}) {
     const preview=mail.preview;
     console.log(mail);
     Axios.post(
-      "http://localhost:5000/email/sent",
+      "https://admin-dashboard-2-ck9x.onrender.com/email/sent",
       { emailId:emailId, subject:mail.subject, body:replyContent,preview },
       { headers: { "Authorization": `Bearer ${token}` } }
     )
@@ -41,7 +41,7 @@ function Reply({ email, mail, Replay,close1,replayType}) {
     const preview=mail.preview;
     console.log(mail);
     Axios.post(
-      "http://localhost:5000/email/sent",
+      "https://admin-dashboard-2-ck9x.onrender.com/email/sent",
       { emailId:emailId, subject:mail.subject, body:mail.body,preview:mail.preview },
       { headers: { "Authorization": `Bearer ${token}` } }
     )
