@@ -63,7 +63,7 @@ const LeftNavbar = () => {
   const handleList=(name)=>{
     setShowtype(name),setActive(name)
     if(name==="Sent"){
-      Axios.get(`http://localhost:5000/email/Sent?page=${currentPage}&limit=${limit}`,{headers:{"Authorization":`Bearer ${localStorage.getItem("token")}`}})
+      Axios.get(`https://admin-dashboard-2-ck9x.onrender.com/email/Sent?page=${currentPage}&limit=${limit}`,{headers:{"Authorization":`Bearer ${localStorage.getItem("token")}`}})
       .then((response)=>{
         console.log(response.data);
         setMailData(response.data.findSentMails)
@@ -77,7 +77,7 @@ const LeftNavbar = () => {
   }
   const handleGetMails=()=>{
 
-    Axios.get(`http://localhost:5000/email/inbox?page=${currentPage}&limit=${limit}`,{headers:{"Authorization":`Bearer ${localStorage.getItem("token")}`}})
+    Axios.get(`https://admin-dashboard-2-ck9x.onrender.com/email/inbox?page=${currentPage}&limit=${limit}`,{headers:{"Authorization":`Bearer ${localStorage.getItem("token")}`}})
     .then((response)=>{
       console.log(response.data)
       setMailData(response.data.mails);
